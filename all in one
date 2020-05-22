@@ -58,7 +58,139 @@ labelComponent
             <span class="checkmark"></span>
               </label>
  </div>
-            
+-------------------
+scss
+
+ .checkbox_container {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-family: Averta;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #666666;
+    }
+    
+    .checkbox_container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    .checkbox_container .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #eee;
+        border-radius: 2px;
+        border: 1px solid #dfdfdf;
+        
+    }
+    
+    .checkbox_container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+    
+    .checkbox_container input:checked~.checkmark {
+        background-color: $main-color;
+    }
+    
+    .checkbox_container .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    .checkbox_container input:checked~.checkmark:after {
+        display: block;
+    }
+    
+    .checkbox_container .checkmark:after {
+        left: 5px;
+        top: 2px;
+        width: 5px;
+        height: 8px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    .radio_container {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        font-family: Averta;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color:black;
+        margin-bottom: 0;
+    }
+    
+    .radio_container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    .radio_container .checkmark {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 16px;
+        width: 16px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+    
+    .radio_container:hover input~.checkmark {
+        background-color: $main-color;
+    }
+    
+    .radio_container input:checked~.checkmark {
+        background-color: #fff;
+        border:2px solid $main-color
+    }
+    
+    .radio_container .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    .radio_container input:checked~.checkmark:after {
+        display: block;
+    }
+    
+    .radio_container .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $main-color;
+    }
+    
 -------------------
 ResetComponent
 
@@ -68,6 +200,42 @@ ResetComponent
     <p>reset</p>
     </div>
   </div>
+  
+  ---------------
+  scss
+  
+  
+  .filter{
+        background-color: #f7f7f7;
+        border-radius: 4px;
+        .filter_header{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-bottom:1px solid #dee2e6;
+            
+            h4{
+                font-family: Averta;
+                font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: black;
+            }
+            p{
+                margin-bottom: 0;
+                font-family: Averta;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: right;
+                color: $main-color;
+            }
 -------------------
     
 FilterItemByCity
@@ -110,7 +278,54 @@ function FilterItemByCity(){
 
 export default FilterItemByCity;
 ---------------
-      
+  scss
+   .filter_body{
+            .filter_item{
+                .item_header{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 20px 10px 20px;
+                    align-items: center;
+                    cursor: pointer;
+                    
+                    .plus{
+                        i{
+                            color: $main-color;
+                            font-size: 15px;
+                        }
+                    }
+                    .activate{
+                        display: none;
+                    }
+                    h6{
+                        font-family: Averta;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                        color: black;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                
+                }
+                .item_body{
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px 20px 15px 20px;
+                }
+            }
+            .border{
+            width: 90%;
+            margin: 0 auto;
+            background-color: #dee2e6!important;
+            height: 1px;
+            border-radius: 5px;
+        }
+  ---------------------------
       
 FilterItemByCar
 
@@ -161,6 +376,60 @@ function FilterItemByCar(){
 export default FilterItemByCar;
      
 -------------------------
+scss
+ 
+            .filter_item{
+                .item_header{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 20px 10px 20px;
+                    align-items: center;
+                    cursor: pointer;
+                    
+                    .plus{
+                        i{
+                            color: $main-color;
+                            font-size: 15px;
+                        }
+                    }
+                    .activate{
+                        display: none;
+                    }
+                    h6{
+                        font-family: Averta;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                        color: black;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                
+                }
+                .item_body{
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px 20px 15px 20px;
+                }
+            }
+            .by_car{
+                flex-direction: column;
+                .custom-selectbox{
+                    margin-bottom: 10px;
+                }
+           .border{
+            width: 90%;
+            margin: 0 auto;
+            background-color: #dee2e6!important;
+            height: 1px;
+            border-radius: 5px;
+        }
+-------------------------
+
  FilterItemByLanguage
  
 
@@ -206,7 +475,67 @@ function FilterItemByLang(){
 
 export default FilterItemByLang;
  ---------------------------------
+scss 
 
+            .filter_item{
+                .item_header{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 20px 10px 20px;
+                    align-items: center;
+                    cursor: pointer;
+                    
+                    .plus{
+                        i{
+                            color: $main-color;
+                            font-size: 15px;
+                        }
+                    }
+                    .activate{
+                        display: none;
+                    }
+                    h6{
+                        font-family: Averta;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                        color: black;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                
+                }
+                .item_body{
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px 20px 15px 20px;
+                }
+            }
+            .by_language{
+                flex-direction: column;
+                .checkbox_header{
+                    font-family: Averta;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: #666666;
+                }
+
+           .border{
+            width: 90%;
+            margin: 0 auto;
+            background-color: #dee2e6!important;
+            height: 1px;
+            border-radius: 5px;
+        }
+            
 
 
 
