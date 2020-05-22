@@ -1,0 +1,242 @@
+DriverGuideLeft component
+
+import React,{Component} from 'react';
+import FilterItemByCity from './FilterItemByCity.component'
+import FilterItemByCar from './FilterItemByCar.component'
+import FilterItemByLanguage from './FilterItemByLanguage.component'
+
+
+
+class DriverGuideLeft extends Component {
+   
+    render(){
+        return (
+            <div>
+                <FilterItemByCity />   
+                <FilterItemByCar />
+                <FilterItemByLanguage />
+                <RadioButtonComponent />
+            </div>
+        )
+    }
+}
+
+export default DriverGuideLeft;
+
+
+--------------
+  RadioButtonComponent
+
+import { RadioButtonComponent } from './radio-button-component'
+  
+        
+        const RadioButtonComponent=(props)=>{
+
+    return(
+        <div class="radio_buttons">
+    <label class="radio_container">Drivers
+      <input autocomplete="off" type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+          </label>
+          </div>
+    )
+}
+
+export default RadioButtonComponent;
+        
+--------------
+labelComponent
+
+<div class="radio_buttons">
+  
+  <label class="radio_container">Drivers
+    <input autocomplete="off" type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+        </label>
+        <label class="radio_container">Guides
+          <input autocomplete="off" type="radio" name="radio">
+            <span class="checkmark"></span>
+              </label>
+ </div>
+            
+-------------------
+ResetComponent
+
+<div class="filter">
+  <div class="filter_header">
+    <h4>Filter</h4>
+    <p>reset</p>
+    </div>
+  </div>
+-------------------
+    
+FilterItemByCity
+
+import React,  from 'react';
+import from './filter-item-by-city.style.scss'
+
+
+function FilterItemByCity(){
+  
+    return (
+<div class="filter_body">
+<div class="item_header by_city">
+  <h6>By city</h6>
+    <div class="plus activate"><i class="fas fa-plus"></i></div>
+      <div class="plus"><i class="fas fa-minus"></i></div>
+
+   </div>
+
+      
+<div class="item_body">
+  <div class="inputs" style="width: 100%;">
+    <select class="select2DropDownCity" name="state" asp-for="#" asp-items="#"
+    style="width: 100%;">
+                 <option>Baku</option>
+                  <option>Ganja</option>
+                  <option>Gabala</option>
+        </select>
+ <select class="select2DropDownCity" name="state" asp-for="#" asp-items="#"
+     style="width: 100%;">
+                  <option>Baku</option>
+                  <option>Ganja</option>
+                  <option>Gabala</option>
+      
+    </div>
+ </div>
+</div>
+       <div class="border"></div>)
+}
+
+export default FilterItemByCity;
+---------------
+      
+      
+FilterItemByCar
+
+import React  from 'react';
+import from './filter-item-by-car.style.scss'
+
+
+function FilterItemByCar(){
+  
+    return (
+
+  <div class="filter_item">
+    <div class="item_header ">
+      <h6>By car</h6>
+        <div class="plus activate"><i class="fas fa-plus"></i></div>
+          <div class="plus"><i class="fas fa-minus"></i></div>
+            </div>
+            <div class="item_body by_car">
+              <div class="inputs">
+                <select class="select2DropDownBrand" name="state" asp-for="#" asp-items="#"
+                style="width: 100%;">
+                 
+                  <option>Brand</option>
+                  <option>Audi</option>
+                  <option>BMW</option>
+                  <option>Citroen</option>
+                  <option>Ford</option>
+                  <option>Honda</option>
+                  </select>
+                  </div>
+                  <div class="inputs">
+                    <select class="select2DropDownModel" name="state" asp-for="#" asp-items="#"
+                    style="width: 100%;">
+                      <!-- <select> -->
+                      <option>Model</option>
+                      <option>Audi</option>
+                      <option>BMW</option>
+                      <option>Citroen</option>
+                      <option>Ford</option>
+                      <option>Honda</option>
+                      </select>
+                      </div>
+     </div>
+         </div>
+     <div class="border"></div>
+}
+
+export default FilterItemByCar;
+     
+-------------------------
+ FilterItemByLanguage
+ 
+
+
+import React  from 'react';
+import from './filter-item-by-lang.style.scss'
+
+
+function FilterItemByLang(){
+  
+    return (
+<div class="filter_item">
+  <div class="item_header ">
+    <h6>By language</h6>
+      <div class="plus activate"><i class="fas fa-plus"></i></div>
+        <div class="plus"><i class="fas fa-minus"></i></div>
+          </div>
+          <div class="item_body by_language">
+            <div class="checkbox_body">
+              <div class="form-group mb-0 inputs">
+                <select class="select2MultipleDropDownLang js-states form-control"
+                multiple="multiple" style="width: 100%;">
+                  <option value="">Azerbaijani</option>
+                    <option value="">Russian</option>
+                      <option value="">English</option>
+                        <option value="">Deutsch</option>
+                          <option value="">Spanish</option>
+                            <option value="">French</option>
+                              <option value="">Italian</option>
+                                <option value="">Georgian</option>
+                                  <option value="">Iranian</option>
+                                    <option value="">Arabic</option>
+                                      <option value="">Armenian</option>
+                                        </select>
+                                        <!-- <span asp-validation-for="Phone" class="text-danger"></span> -->
+                                          <span asp-validation-for="LanguageIds" class="text-danger"></span>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+ <div class="border"></div>
+}
+
+export default FilterItemByLang;
+ ---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
